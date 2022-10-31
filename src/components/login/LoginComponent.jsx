@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Button } from "../Button/Button"
 
 const LoginComponent = ({ changeComponent }) => {
   const [disabled, setDisabled] = useState(true)
@@ -9,14 +10,15 @@ const LoginComponent = ({ changeComponent }) => {
       setDisabled(false)
     }
   }, [password, username])
+
   return (
     <div>
       <input onChange={(e) => setUsername(e.target.value)} type="text" />
       <input onChange={(e) => setPassword(e.target.value)} type="password" />
-      <button disabled={disabled} onClick={() => changeComponent("landing")}>
+      <Button disabled={disabled} onClick={() => changeComponent("landing")}>
         {" "}
         <h4>Logga in</h4>
-      </button>
+      </Button>
     </div>
   )
 }
