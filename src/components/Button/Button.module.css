@@ -3,7 +3,8 @@
   border: 1px solid #FE938C;
   background: #FE938C;
   color: black;
-  padding: 9px 5px;
+  width: fit-content;
+  padding: 5px 10px;
   cursor: pointer;
   font-size: 1.15rem;
   border-radius: 30px;
