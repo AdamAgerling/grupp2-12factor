@@ -1,5 +1,10 @@
 /* GLOBAL STYLES */
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body{
  background-color:  #EAD2AC;
+
 }
