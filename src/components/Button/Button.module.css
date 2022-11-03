@@ -14,7 +14,7 @@
 .button:active {
   background: #4281A4;
   border-color: #4281A4;
-  color: white;
+  color: hotpink;
 }
 
 .button:focus {
