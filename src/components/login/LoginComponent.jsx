@@ -16,7 +16,6 @@ const LoginComponent = ({ changeComponent }) => {
       <input onChange={(e) => setUsername(e.target.value)} type="text" />
       <input onChange={(e) => setPassword(e.target.value)} type="password" />
       <Button disabled={disabled} onClick={() => changeComponent('landing')}>
-        {' '}
         <h4>Logga in</h4>
       </Button>
     </div>
