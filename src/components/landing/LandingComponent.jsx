@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import {useCookies} from 'react-cookie';
 
 const LandingComponent = ({ changeComponent }) => {
-  const [users, setUsers] = useState(null)
 
-
-
-  useEffect(() => {
-    fetch('http://localhost:3001/api/users/')
-  .then(response => response.json())
-  .then(result => {
-    setUsers(result.users)
-  },[])
-  })
+  const [cookies] = useCookies()
 
   return (
     <div>
-      {users?.map((user) => (
-        <h1 key={user._id}>Välkommen vänligen {user.userName}{user._id}</h1>
-      ))}
+      {cookies.name === 'null' ? <h1>Hej Unknown, Du har inte lagrat cookies sopa..</h1> : <h1 >Välkommen vänligen {cookies.name}</h1>}
+
       <p>Detta är landing page</p>
       <button>
         <h4 onClick={() => changeComponent(null)}>Logga ut</h4>

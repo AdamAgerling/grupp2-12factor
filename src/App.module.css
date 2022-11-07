@@ -5,5 +5,13 @@
 }
 
 body{
- background-color:  #EAD2AC;
+ background-color:  #ccc;
+ height: 100vh;
+}
+
+.navbar{
+  background-color: black;
+  color: #fff;
+  margin-bottom: 100px;
+  text-align: center;
 }
