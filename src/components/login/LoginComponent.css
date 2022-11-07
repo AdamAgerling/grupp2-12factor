@@ -1,27 +1,25 @@
-.cookie-banner{
+.cookie-banner {
   display: flex;
-  margin-top: 500px;
   justify-content: space-evenly;
   height: 100px;
   align-items: center;
   padding: 0 15px;
   background-color: #fff;
   border: 2px solid #000;
-  border-bottom: none;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height:84.8vh;
+  min-height: 84.8vh;
 }
 
-p{
-  max-width: 50% ;
+p {
+  max-width: 50%;
 }
 
-input{
+input {
   height: 44px;
   border-radius: 20px;
   border: none;
@@ -29,7 +27,7 @@ input{
   padding: 10px;
   font-weight: bold;
   background-color: rgb(226, 226, 226);
-  font-size: 18px
+  font-size: 18px;
 }
 
 .login-container {
@@ -43,13 +41,18 @@ input{
   padding: 20px 30px;
 }
 
-.button-container{
+.button-container {
   display: flex;
   justify-content: space-evenly;
   width: 200px;
 }
 
-label{
+label {
   font-weight: bold;
+}
 
+.exit-sign {
+  margin-bottom: 64px;
+  margin-right: -143px;
+  cursor: pointer;
 }

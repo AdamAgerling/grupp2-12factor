@@ -22,7 +22,7 @@ function App() {
 
       <div>
         <div className={styles.navbar}>
-          <h1>hejhej 10 kroneh snäll?!</h1>
+          <h1>Logga in</h1>
         </div>
         {component === null ? (
           <LoginComponent changeComponent={changeComponent} />
