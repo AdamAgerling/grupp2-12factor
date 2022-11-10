@@ -19,6 +19,7 @@ const LoginComponent = ({ changeComponent }) => {
   const declineCookie = () => {
     setConsent(false)
     setClose(true)
+    console.log(cookies)
   }
 
   const sendData = () => {
