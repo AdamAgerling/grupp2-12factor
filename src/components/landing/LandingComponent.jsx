@@ -1,7 +1,7 @@
 import React from "react";
 import { useCookies } from "react-cookie";
 import CdnImage from '../cdnImage/CdnImage'
-import styles from './LandingComponent.module.css'
+
 
 const LandingComponent = ({ changeComponent }) => {
   const [cookies] = useCookies()
@@ -21,9 +21,7 @@ const LandingComponent = ({ changeComponent }) => {
       </button>
     </div>
     <h2 >Här är en svettig dojja</h2>
-
-    <CdnImage  className={styles['sweatty-Freddy']}/>
-
+    <CdnImage/>
     </>
   )
 }
