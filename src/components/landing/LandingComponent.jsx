@@ -1,10 +1,13 @@
-import React from "react"
-import { useCookies } from "react-cookie"
+import React from "react";
+import { useCookies } from "react-cookie";
+import CdnImage from '../cdnImage/CdnImage'
+import styles from './LandingComponent.module.css'
 
 const LandingComponent = ({ changeComponent }) => {
   const [cookies] = useCookies()
 
   return (
+    <>
     <div>
       {cookies.name === "null" ? (
         <h1>Hej Unknown, Du har inte lagrat cookies sopa..</h1>
@@ -17,6 +20,11 @@ const LandingComponent = ({ changeComponent }) => {
         <h4 onClick={() => changeComponent(null)}>Logga ut</h4>
       </button>
     </div>
+    <h2 >Här är en svettig dojja</h2>
+
+    <CdnImage  className={styles['sweatty-Freddy']}/>
+
+    </>
   )
 }
 

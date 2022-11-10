@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 import { Button } from "../Button/Button"
 import "./LoginComponent.css"
@@ -22,6 +22,7 @@ const LoginComponent = ({ changeComponent }) => {
   }
 
   const sendData = () => {
+    if(consent) {
     fetch("http://localhost:3001/api/users", {
       method: "POST",
       headers: {
@@ -33,6 +34,7 @@ const LoginComponent = ({ changeComponent }) => {
         password: password,
       }),
     })
+  }
     if (userName) {
       changeComponent("landing")
       if (consent) {
