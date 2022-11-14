@@ -3,11 +3,9 @@ import { useCookies } from "react-cookie";
 import CdnImage from '../cdnImage/CdnImage'
 import { Button } from "../Button/Button";
 
-
 const LandingComponent = ({ changeComponent }) => {
   const [cookies, removeCookie] = useCookies()
   const [users, setUsers] = useState(null)
-
 
   function handleRemoveCookie() {
     removeCookie("name");
@@ -20,15 +18,7 @@ const LandingComponent = ({ changeComponent }) => {
     setUsers(result.users)
     console.log(result.users)
   })
-
-
  },[])
-
-
-
-
-
-
 
   return (
     <>
