@@ -57,12 +57,3 @@ app.get('/api/users', (req, res) => {
     res.json({ users: items });
   });
 });
-
-app.get('/api/users/:id', (req, res) => {
-  let id = req.params._id;
-  // eslint-disable-next-line no-undef
-  users.find({ _id: id }).toArray((err, items) => {
-    if (err) throw err;
-    res.json({ users: items });
-  });
-});
