@@ -12,13 +12,7 @@ function App() {
     console.log(component);
   }
   return (
-    // <BrowserRouter>
     <CookiesProvider>
-      {/*      <Routes>
-         <Route element={<LandingComponent />} path="/landing" />
-         <Route element={<LoginComponent />} path="/" />
-        </Routes> */}
-
       <div>
         <div className={styles.navbar}>
           <h1>Logga in</h1>
@@ -35,7 +29,6 @@ function App() {
         )}
       </div>
     </CookiesProvider>
-    // </BrowserRouter>
   );
 }
 

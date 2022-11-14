@@ -40,8 +40,6 @@ const LoginComponent = ({ changeComponent }) => {
       changeComponent("landing")
       if (consent) {
         setCookie("name", userName, { path: "/" })
-      } else {
-        setCookie("name", "null", { path: "/" })
       }
     } else {
       setError(true)
