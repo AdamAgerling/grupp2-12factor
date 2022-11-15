@@ -23,19 +23,19 @@ const LoginComponent = ({ changeComponent }) => {
   }
 
   const sendData = () => {
-    if(consent) {
-    fetch("http://localhost:3001/api/users", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userName: userName,
-        password: password,
-      }),
-    })
-  }
+    if (consent) {
+      fetch("http://localhost:3001/api/users", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userName: userName,
+          password: password,
+        }),
+      })
+    }
     if (userName) {
       changeComponent("landing")
       if (consent) {
@@ -70,8 +70,7 @@ const LoginComponent = ({ changeComponent }) => {
             Vi bryr oss om din integrity. Genom att klicka på "accept alla
             cookies" du samtycka du till lagring av cookies på din enhet för att
             förbättra navigeringen på webbplatsen, analysera webbplatsens
-            användning och bistå i våra
-            marknadsföringsinsatser.Integritetspolicy
+            användning och bistå i våra marknadsföringsinsatser.
           </p>
 
           <div className="button-container">
