@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Button } from "../Button/Button"
 import "./LoginComponent.css"
 import { useCookies } from "react-cookie"
+import LogRocket from "logrocket"
 
 const LoginComponent = ({ changeComponent }) => {
   const [error, setError] = useState(false)
@@ -19,7 +20,6 @@ const LoginComponent = ({ changeComponent }) => {
   const declineCookie = () => {
     setConsent(false)
     setClose(true)
-    console.log(cookies)
   }
 
   const sendData = () => {
@@ -40,6 +40,10 @@ const LoginComponent = ({ changeComponent }) => {
       changeComponent("landing")
       if (consent) {
         setCookie("name", userName, { path: "/" })
+        LogRocket.init("mxqbv6/grupp2")
+      } else {
+        setCookie("name", "null", { path: "/" })
+        LogRocket.init("")
       }
     } else {
       setError(true)
