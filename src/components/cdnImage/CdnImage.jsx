@@ -5,7 +5,7 @@ const CdnImage = () => {
 
   const cld = new Cloudinary({
     cloud: {
-      cloudName: 'dobzvf2h5'
+      cloudName: process.env.REACT_APP_CLOUDINARY
     }
   })
 
