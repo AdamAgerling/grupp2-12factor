@@ -1,54 +1,54 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 
-import { Button } from "../Button/Button"
-import "./LoginComponent.css"
-import { useCookies } from "react-cookie"
-import LogRocket from "logrocket"
+import { Button } from '../Button/Button';
+import './LoginComponent.css';
+import { useCookies } from 'react-cookie';
+import LogRocket from 'logrocket';
 
 const LoginComponent = ({ changeComponent }) => {
-  const [error, setError] = useState(false)
-  const [userName, setUserName] = useState("")
-  const [password, setPassword] = useState("")
-  const [cookies, setCookie] = useCookies(["name"])
-  const [consent, setConsent] = useState(false)
-  const [close, setClose] = useState(false)
+  const [error, setError] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [cookies, setCookie] = useCookies(['name']);
+  const [consent, setConsent] = useState(false);
+  const [close, setClose] = useState(false);
 
   const acceptCookie = () => {
-    setConsent(true)
-    setClose(true)
-  }
+    setConsent(true);
+    setClose(true);
+  };
   const declineCookie = () => {
-    setConsent(false)
-    setClose(true)
-  }
+    setConsent(false);
+    setClose(true);
+  };
 
   const sendData = () => {
     if (consent) {
-      fetch("http://localhost:3001/api/users", {
-        method: "POST",
+      fetch(process.env.REACT_APP_DB_FETCH, {
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           userName: userName,
           password: password,
         }),
-      })
+      });
     }
     if (userName) {
-      changeComponent("landing")
+      changeComponent('landing');
       if (consent) {
-        setCookie("name", userName, { path: "/" })
-        LogRocket.init("mxqbv6/grupp2")
+        setCookie('name', userName, { path: '/' });
+        LogRocket.init(process.env.REACT_APP_LOGROCKET);
       } else {
-        setCookie("name", "null", { path: "/" })
-        LogRocket.init("")
+        setCookie('name', 'null', { path: '/' });
+        LogRocket.init('');
       }
     } else {
-      setError(true)
+      setError(true);
     }
-  }
+  };
   return (
     <div className="wrapper">
       <div className="login-container">
@@ -86,12 +86,12 @@ const LoginComponent = ({ changeComponent }) => {
           </h4>
         </div>
       ) : (
-        ""
+        ''
       )}
 
       {error && <p>Aww, shucks.. Something went terribly wrong</p>}
     </div>
-  )
-}
+  );
+};
 
-export default LoginComponent
+export default LoginComponent;

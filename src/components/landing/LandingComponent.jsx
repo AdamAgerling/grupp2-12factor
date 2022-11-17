@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react"
-import { useCookies } from "react-cookie"
-import CdnImage from "../cdnImage/CdnImage"
-import { Button } from "../Button/Button"
+import React, { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
+import CdnImage from '../cdnImage/CdnImage';
+import { Button } from '../Button/Button';
 
 const LandingComponent = ({ changeComponent }) => {
-  const [cookies, removeCookie] = useCookies()
-  const [data, setData] = useState(null)
+  const [cookies, removeCookie] = useCookies();
+  const [data, setData] = useState(null);
 
   function handleRemoveCookie() {
-    removeCookie("name")
+    removeCookie('name');
   }
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/users/")
+    fetch(process.env.REACT_APP_DB_FETCH)
       .then((response) => response.json())
       .then((result) => {
-        setData(result.users)
-      })
-  }, [])
+        setData(result.users);
+      });
+  }, []);
 
   return (
     <>
       <div>
-        {cookies.name === "null" ? (
+        {cookies.name === 'null' ? (
           <h1>Hej Unknown, Du har inte lagrat cookies sopa..</h1>
         ) : (
           <h1>Välkommen vänligen {cookies.name}</h1>
@@ -44,7 +44,7 @@ const LandingComponent = ({ changeComponent }) => {
       <h2>Här är en svettig dojja</h2>
       <CdnImage />
     </>
-  )
-}
+  );
+};
 
-export default LandingComponent
+export default LandingComponent;
